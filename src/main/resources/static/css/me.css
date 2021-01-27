@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/*设置背景图案*/
+body {
+    background: url("../image/blue-snow.png");
+}
+
+/*设置padding内部间距*/
+/*使用em，相对大小，用于弹性布局*/
+.m-padding-mini {
+    padding: 0.3em !important;
+}
+
+.m-padding-tidy {
+    padding: 0.5em !important;
+}
+
+.m-padding {
+    padding: 1em !important;
+}
+
+/*Top和Button的padding*/
+.m-padding-tb-mini {
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+
+.m-padding-tb-tidy {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+.m-padding-tb-small {
+    padding-top: 0.7em !important;
+    padding-bottom: 0.7em !important;
+}
+
+.m-padding-tb {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+
+.m-padding-tb-large {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+.m-padding-tb-big {
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+
+.m-padding-tb-huge {
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+
+.m-padding-tb-massive {
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+
+/*left和right的padding*/
+.m-padding-lr-large {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+
+/* 这个是响应式的，在手机上间距会不一样 */
+.m-padding-lr-responsive {
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+
+/*------------------设置margin外部间距---------------------*/
+.m-margin-top-tidy {
+    margin-top: 0.5em !important;
+}
+
+.m-margin-top {
+    margin-top: 1em !important;
+}
+
+.m-margin-top-large {
+    margin-top: 2em !important;
+}
+
+.m-margin-bottom-tidy {
+    margin-bottom: 0.5em !important;
+}
+
+.m-margin-tb-tiny {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.m-margin-lr {
+    margin-right: 1em !important;
+}
+
+
+/*-----------------设置文本--------------------*/
+.m-text {
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8 !important;
+}
+
+/*字粗细*/
+.m-text-thin {
+    font-weight: 300 !important;
+}
+
+/*字间距*/
+.m-text-spaced {
+    letter-spacing: 1px;
+}
+
+/*行间距*/
+.m-text-lined {
+    line-height: 1.8;
+}
+
+/*------------------设置透明度-------------------*/
+.m-opacity-mini {
+    opacity: 0.8;
+}
+
+.m-opacity-tidy {
+    opacity: 0.6;
+}
+
+.m-opacity-zero {
+    opacity: 0.1;
+}
+
+/*设置右侧导航栏的绝对位置*/
+.m-fixed {
+    position: fixed !important;
+    z-index: 10 !important;
+}
+
+.m-right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.m-right-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/*----------------------------------取消换行-----------------------------*/
+.m-inline-block {
+    display: inline-block;
+}
+
+/*设置阴影*/
+.m-shadow-small {
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /*兼容浏览器*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/*设置移动端缩放*/
+.m-mobile-show {
+    display: none !important;
+}
+
+/*这个767是根据semanticUI框架里的Stackable的设置得到的*/
+@media screen and (max-width: 767px) {
+    .m-mobile-hide {
+        display: none !important;
+    }
+
+    .m-mobile-show {
+        display: block !important;
+    }
+
+    .m-padding-lr-responsive {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .m-mobile-wide {
+        width: 100% !important;
+    }
+}
+
+/*设置中间内容的最大宽度，semantic里的container最大宽度太大了*/
+.m-container {
+    max-width: 72em !important;
+    margin: auto !important;
+}
+
+.m-container-small {
+    max-width: 60em !important;
+    margin: auto !important;
+}
+
+/*设置颜色*/
+.m-black {
+    color: #333333 !important;
+}
