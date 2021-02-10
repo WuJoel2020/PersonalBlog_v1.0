@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CH" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/_fragments::head('登录成功','关键词','页面描述')">
+    <title>登录成功</title>
+</head>
+<body>
+    <!--头部导航-->
+    <div th:replace="admin/_fragments :: menu(1)"></div>
+    <!--中间内容-->
+    <div class="m-container-small m-padding-tb-massive">
+        <div class="ui success large message">
+            <div class="ui container">
+                <h2>Hi</h2>
+                <p>欢迎登录</p>
+            </div>
+        </div>
+    </div>
+    <!--底部导航-->
+    <div th:replace="admin/_fragments :: footer"></div>
+    <script>
+        $('.menu.toggle').click(function () {
+            $('.m-item').toggleClass('m-mobile-hide');
+        });
+
+        $('.ui.dropdown').dropdown({
+            on : 'hover'
+        });
+    </script>
+</body>
+</html>

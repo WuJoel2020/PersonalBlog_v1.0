@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--这个lang也挺讲究,zh-HK和zh-CH对文字显示效果都有不同影响-->
-<html lang="zh-CH">
-<head>
+<html lang="zh-CH" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments::head(~{::title})">
     <!--文档的字符编码，防止乱码-->
     <meta charset="UTF-8">
     <!--SEO优化部分-->
@@ -23,7 +23,7 @@
     <!--CSS和通用JS的引入-->
     <link rel="icon" href="../static/image/icon.jpg" sizes="32x32">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="../static/css/me.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
@@ -36,7 +36,7 @@
 
     <!--导航-->
     <!--attached：没有圆角，更贴合-->
-    <nav class="ui inverted attached segment m-padding-tb-mini m-shadow-small">
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padding-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui white header item">MyBlog</h2>
@@ -350,7 +350,7 @@
                     <!--二维码-->
                     <h4 class="ui horizontal divider header m-margin-top-large">扫码关注我</h4>
                     <div class="ui centered card" style="width: 11em">
-                        <img src="../static/image/Wechat.jpg" alt="" class="ui rounded image">
+                        <img src="../static/image/Wechat.jpg" th:src="@{/image/Wechat.jpg}" alt="" class="ui rounded image">
                     </div>
                 </div>
 
@@ -361,7 +361,7 @@
 
     <!--底部footer-->
     <!--这里使用vertical来贴合，相比于attached，下方没有白色的线-->
-    <footer class="ui inverted vertical segment m-padding-tb-massive">
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padding-tb-massive">
         <!--对容器中的所有内容使用居中-->
         <div class="ui center aligned container">
             <!--grid默认分为16份-->
@@ -404,6 +404,9 @@
         </div>
     </footer>
 
-    <script src="../static/js/me.js"></script>
+    <script src="../static/js/me.js" th:src="@{/js/me.js}"></script>
+    <script>
+
+    </script>
 </body>
 </html>

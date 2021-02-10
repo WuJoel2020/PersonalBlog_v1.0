@@ -18,14 +18,16 @@ import javax.servlet.http.HttpServletRequest;
 public class LogAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* org.joel.blog.web.*.*(..))")
+    // 添加切面，web下所有的类的所有的方法，返回任何的值
+    @Pointcut("execution(* org.joel.blog.web.*.*(..)) || execution(* org.joel.blog.web.admin.*.*(..))")
     public void log() {
-
     }
 
+    // 然后就是围绕着切面添加方法
     @Before("log()")
     public void doBefore(JoinPoint joinPoint) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        assert attributes != null;
         HttpServletRequest request = attributes.getRequest();
         String url = request.getRequestURL().toString();
         String ip = request.getRemoteHost();
@@ -37,11 +39,6 @@ public class LogAspect {
         logger.info("Request : {}", requestLog);
     }
 
-    @After("log()")
-    public void doAfter() {
-//        logger.info("----doAfter----");
-    }
-
     @AfterReturning(returning = "result", pointcut = "log()")
     public void doAfterReturn(Object result) {
         logger.info("Result : {}", result);
@@ -50,7 +47,7 @@ public class LogAspect {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    private class RequestLog {
+    private static class RequestLog {
         private String url;
         private String ip;
         private String classMethod;

@@ -18,7 +18,7 @@ public class User {
     @GeneratedValue
     private Long id;
     private String nickName;
-    private String userName;
+    private String username;
     private String password;
     private String email;
     private String avatar;
