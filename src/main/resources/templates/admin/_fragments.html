@@ -30,20 +30,20 @@
             th:src="@{/lib/waypoints/jquery.waypoints.js}"></script>
 </head>
 <body>
-    <nav th:fragment="menu(n)" class="ui inverted attached segment m-padding-tb-mini m-shadow-small">
+    <nav th:fragment="menu(n)" class="ui inverted black vertical segment m-padding-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui white header item">后台管理</h2>
-                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n==1} ?'active'"><i
-                        class="home icon"></i>博客</a>
-                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n==2} ?'active'"><i
-                        class="book icon"></i>分类</a>
-                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n==3} ?'active'"><i
-                        class="idea icon"></i>标签</a>
+                <a href="#" th:href="@{/admin/blogs}" class="item m-item m-mobile-hide"
+                   th:classappend="${n==1} ?'active'"><i class="home icon"></i>博客</a>
+                <a href="#" th:href="@{/admin/types}" class="item m-item m-mobile-hide"
+                   th:classappend="${n==2} ?'active'"><i class="book icon"></i>分类</a>
+                <a href="#" th:href="@{/admin/tags}" class="item m-item m-mobile-hide"
+                   th:classappend="${n==3} ?'active'"><i class="idea icon"></i>标签</a>
                 <div class="right m-item m-mobile-hide menu">
                     <div class="ui dropdown item">
                         <div class="text">
-                            <img src="http://img.wxcha.com/file/201904/19/0c40dbdd05.jpg" alt=""
+                            <img th:src="@{/image/icon.jpg}" src="http://img.wxcha.com/file/201904/19/0c40dbdd05.jpg" alt=""
                                  class="ui avatar image">
                             Joel
                         </div>
